@@ -4,11 +4,17 @@ import PySimpleGUI as sg
 def reglog():
     register = [[sg.Frame('Registration',[[sg.Text('User Login Name:')],[sg.Input(size=(20, 1), key='--NAME--')],[sg.Text('User Password:')],[sg.Input(size=(20, 1), key='--PASSWORD--')],[sg.Button('Registration')]],pad=(0,0))]]
     log_in=    [[sg.Frame('Log-In',[[sg.Text('Login Name:')],[sg.Input(size=(20, 1), key='--NAME--')],[sg.Text('Password:')],[sg.Input(size=(20, 1), key='--PASSWORD--')],[sg.Button('Log In')]],pad=(0,0))]]
-    layout=[[sg.Column(register),sg.Column(log_in)]]
-    window = sg.Window('Reg and Log In', layout)
+    output= [[sg.Frame('Output',[[sg.Output(size=(50,20),key='--OUTPUT--')]])]]
+    layout=[[sg.Column(register),sg.Column(log_in)],output]
+    window = sg.Window('Reg and Log In', layout,location=(100,100))
     while True:
         event, values = window.read()
-        if event == sg.WINDOW_CLOSED or event == 'Registration':
+        if event == 'Registration':
+            name=values['--NAME--']
+            password=values['--PASSWORD--']
+            from register import reg
+            reg(name,password)
+        if event== sg.WINDOW_CLOSED:
             break
     window.close()
 
