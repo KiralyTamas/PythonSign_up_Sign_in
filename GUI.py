@@ -1,23 +1,14 @@
-import PySimpleGUI as psg
+import PySimpleGUI as sg
 
 
 def reglog():
-    layout = [[psg.Frame('Reg', 
-            [[psg.Text('User Login Name:')],
-            [psg.Input(size=(20, 1), key='--NAME--')],
-            [psg.Text('User Password:')],
-            [psg.Input(size=(20, 1), key='--PASSWORD--')],
-            [psg.Button('Registration')]])],
-        [psg.Frame('Log',
-            [[psg.Text('Login Name:')],
-            [psg.Input(size=(20, 1), key='--NAME--')],
-            [psg.Text('Password:')],
-            [psg.Input(size=(20, 1), key='--PASSWORD--')],
-            [psg.Button('Log In')]])]]
-    window = psg.Window('Reg and Log In', layout, size=(400,400))
+    register = [[sg.Frame('Registration',[[sg.Text('User Login Name:')],[sg.Input(size=(20, 1), key='--NAME--')],[sg.Text('User Password:')],[sg.Input(size=(20, 1), key='--PASSWORD--')],[sg.Button('Registration')]],pad=(0,0))]]
+    log_in=    [[sg.Frame('Log-In',[[sg.Text('Login Name:')],[sg.Input(size=(20, 1), key='--NAME--')],[sg.Text('Password:')],[sg.Input(size=(20, 1), key='--PASSWORD--')],[sg.Button('Log In')]],pad=(0,0))]]
+    layout=[[sg.Column(register),sg.Column(log_in)]]
+    window = sg.Window('Reg and Log In', layout)
     while True:
         event, values = window.read()
-        if event == psg.WINDOW_CLOSED or event == 'Quit':
+        if event == sg.WINDOW_CLOSED or event == 'Registration':
             break
     window.close()
 
