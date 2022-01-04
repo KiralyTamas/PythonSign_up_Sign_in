@@ -1,18 +1,6 @@
 {
-"user_name":{
-    "0":"King",
-    "1":"Naruto",
-    "2":"Sasuke",
-    "3":"Kakashi",
-    "4":"Shikamaru",
-    "5":"Minato"
-    },
-"password":{
-    "0":"Zita",
-    "1":"Hinata",
-    "2":"Sakura",
-    "3":"Pakkun",
-    "4":"Temari",
-    "5":"Jhirayra"
-        }
+    "Sasuke": {
+        "password": "Sakura",
+        "status": null
     }
+}
