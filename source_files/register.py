@@ -3,14 +3,14 @@ import pandas as pd
 import os
 
 def reg(user_name,password):
+    status=False
     if os.path.exists("database")==False:
         os.mkdir("database")
     if os.path.exists("database/user_datas.json")==False:
         open("database/user_datas.json", "x")
-    status=False
-    raw_data={'password':[password],'gyermek':[status]}
-    data=pd.DataFrame(raw_data,columns=['password','status'],index=[user_name])
-    data.to_json(r'database/user_datas.json',orient='index')
-    print("Készen vagyok")
-
-reg("Sasuke","Sakura")
+    with open("database/user_datas.json", "r") as file:
+        json_data=json.load(file)
+        raw_data={'password':password,'status':status}
+        json_data['user'][user_name]=raw_data
+    with open("database/user_datas.json", "w", newline='',encoding='utf-8') as file:
+        json.dump(json_data,file,indent=4)

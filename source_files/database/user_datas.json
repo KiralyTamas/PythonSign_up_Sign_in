@@ -1,6 +1,12 @@
 {
-    "Sasuke": {
-        "password": "Sakura",
-        "status": null
+    "user": {
+        "Naruto": {
+            "password": "Hinata",
+            "status": false
+        },
+        "Sasuke": {
+            "password": "Sakura",
+            "status": false
+        }
     }
 }
