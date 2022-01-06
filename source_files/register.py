@@ -1,5 +1,4 @@
 import json
-import pandas as pd
 import os
 
 def reg(user_name,password):
@@ -10,7 +9,11 @@ def reg(user_name,password):
         open("database/user_datas.json", "x")
     with open("database/user_datas.json", "r") as file:
         json_data=json.load(file)
+        for i in json_data['user']:
+            if user_name == i:
+                return print("Már van ilyen felhasználó")
         raw_data={'password':password,'status':status}
         json_data['user'][user_name]=raw_data
     with open("database/user_datas.json", "w", newline='',encoding='utf-8') as file:
         json.dump(json_data,file,indent=4)
+    return ("Felhasználó Regisztrálva")

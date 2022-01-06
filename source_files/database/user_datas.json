@@ -2,11 +2,11 @@
     "user": {
         "Naruto": {
             "password": "Hinata",
-            "status": true
+            "status": false
         },
         "Say": {
             "password": "Ino",
-            "status": true
+            "status": false
         }
     }
 }

@@ -13,8 +13,7 @@ def reglog():
             name=values['--NAME--']
             password=values['--PASSWORD--']
             from source_files.register import reg
-            reg(name,password)
-            window['--OUTPUT--'].update("Már van ilyen felhasználó")
+            window['--OUTPUT--'].update(reg(name,password))
         if event== sg.WINDOW_CLOSED:
             break
     window.close()
