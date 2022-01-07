@@ -1,7 +1,7 @@
 import os
 import json
 
-def log_in(user_name,password):
+def log(user_name,password):
     with open("database/user_datas.json", "r") as file:
         json_data=json.load(file)
         users=[]
@@ -13,8 +13,9 @@ def log_in(user_name,password):
             if json_data['user'][user_name]['status']==True:
                 return print("Már be vagy jelentkezve")
             else:
-                return print("Üdvözöllek :)")
+                json_data['user'][user_name]['status']=True
+                with open("database/user_datas.json","w",newline='',encoding='utf-8')as new_file:
+                    json.dump(json_data, new_file,indent=4)
+                return print(f"Üdvözöllek {user_name}")
         elif user_name not in users:
             return print("Nincs ilyen felhasználó") 
-        
-log_in("Naruto","Hinata")
