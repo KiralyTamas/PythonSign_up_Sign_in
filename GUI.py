@@ -8,6 +8,8 @@ def reglog():
     layout=[[sg.Column(register),sg.Column(log_in)],output]
     window = sg.Window('Reg and Log In', layout,location=(300,100))
     while True:
+        from source_files.auto_check_log import auto
+        auto()
         event, values = window.read()
         if event == 'Registration':
             reg_name=values['--REG_NAME--']

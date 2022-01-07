@@ -21,5 +21,3 @@ def log(user_name,password):
                 return print(f"Üdvözöllek {user_name}")
         elif user_name not in users:
             return print("Nincs ilyen felhasználó") 
-
-log("Sasuke","Sakura")
