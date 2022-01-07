@@ -2,15 +2,18 @@
     "user": {
         "Naruto": {
             "password": "Hinata",
-            "status": true
+            "status": false,
+            "log_in_time": "2022-01-07 15:25:00"
         },
         "Say": {
             "password": "Ino",
-            "status": true
+            "status": false,
+            "log_in_time": "2022-01-07 15:25:00"
         },
         "Sasuke": {
             "password": "Sakura",
-            "status": true
+            "status": false,
+            "log_in_time": "2022-01-07 15:25:00"
         }
     }
 }
